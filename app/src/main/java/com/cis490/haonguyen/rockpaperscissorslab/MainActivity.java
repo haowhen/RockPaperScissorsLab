@@ -1,6 +1,7 @@
 package com.cis490.haonguyen.rockpaperscissorslab;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,7 +49,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 	@Override
 	public void onClick(View view) {
-		if(view.getId() == R.id.imageRock)
+	/*if(view.getId() == R.id.imageRock)
 		{
 			showMessage(view, "You clicked rock");
 		}
@@ -60,6 +61,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		{
 			showMessage(view,"You clicked scissors");
 		}
+*/
+		Intent intent = new Intent(this, WinLoseActivity.class);
+		intent.putExtra(RockPaperScissorsConstant.PLAYER_CHOICE, view.getId());
+		startActivity(intent);
 	}
 
 	public static void showMessage(View view, String message){
